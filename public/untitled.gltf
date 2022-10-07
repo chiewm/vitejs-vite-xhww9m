@@ -1,0 +1,88 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.2.40",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_lights_punctual"
+    ],
+    "extensionsRequired" : [
+        "KHR_lights_punctual"
+    ],
+    "extensions" : {
+        "KHR_lights_punctual" : {
+            "lights" : [
+                {
+                    "color" : [
+                        0.9999964237213135,
+                        0.9214164614677429,
+                        0.28529122471809387
+                    ],
+                    "intensity" : 1974,
+                    "type" : "point",
+                    "name" : "\u70b9\u5149.004"
+                },
+                {
+                    "color" : [
+                        0.9999964237213135,
+                        0.9214164614677429,
+                        0.28529122471809387
+                    ],
+                    "intensity" : 4000,
+                    "type" : "point",
+                    "name" : "\u70b9\u5149.005"
+                }
+            ]
+        }
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "extensions" : {
+                "KHR_lights_punctual" : {
+                    "light" : 0
+                }
+            },
+            "name" : "\u70b9\u5149.002",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ],
+            "translation" : [
+                3.766425609588623,
+                4.1594014167785645,
+                -7.194144248962402
+            ]
+        },
+        {
+            "extensions" : {
+                "KHR_lights_punctual" : {
+                    "light" : 1
+                }
+            },
+            "name" : "\u70b9\u5149.003",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ],
+            "translation" : [
+                4.8854851722717285,
+                4.078638553619385,
+                4.381864547729492
+            ]
+        }
+    ]
+}
