@@ -1,37 +1,29 @@
-import { useState } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Environment, OrbitControls, Stage } from '@react-three/drei';
+import { Model } from './Model';
 
 function App() {
+  const ref = useRef();
   return (
     <div className="App" id="canvas">
       <Canvas
-        shadows
-        dpr={[1, 2]}
-        camera={{
-          position: [10, 6, 10],
-          fov: 50,
-          material: { restitution: 10 },
+        style={{
+          height: '100vh',
+          width: '100vh',
+          background: 'rgb(182 241 181)',
         }}
+        dpr={[1, 2]}
+        camera={{ fov: 50 }}
       >
-        <mesh castShadow receiveShadow>
-          <sphereGeometry args={[4, 64, 64]} />
-          <meshLambertMaterial color="white" />
-        </mesh>
-
-        <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-          <planeGeometry args={[100, 100]} />
-          <shadowMaterial color="#171717" />
-        </mesh>
-
-        <ambientLight intensity={0.1} />
-        <spotLight
-          position={[10, 10, 10]}
-          angle={0.5}
-          intensity={1}
-          castShadow
-          penumbra={1}
-          color="white"
-        />
+        <Suspense fallback={null}>
+          <Stage controls={ref} intensity={0.8} environment="city">
+            false
+            <Model />
+            false
+          </Stage>
+        </Suspense>
+        <OrbitControls ref={ref} autoRotate />
       </Canvas>
     </div>
   );
