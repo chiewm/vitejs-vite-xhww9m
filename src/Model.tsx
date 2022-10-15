@@ -6,59 +6,18 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 export function Model(props: any) {
-  const { nodes, materials } = useGLTF('/untitled.gltf');
+  const { nodes, materials } = useGLTF('/muyu.glb');
   return (
     <group {...props} dispose={null}>
-      {/* <pointLight
-        intensity={1974}
-        decay={2}
-        color="#feea48"
-        position={[3.77, 4.16, -7.19]}
-        rotation={[-Math.PI / 2, 0, 0]}
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.立方体.geometry}
+        material={nodes.立方体.material}
+        position={[-0.06, 0, -0.27]}
       />
-      <pointLight
-        intensity={4000}
-        decay={2}
-        color="#feea48"
-        position={[4.89, 4.08, 4.38]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      /> */}
-      <group position={[1.34, 0.52, 1.17]} scale={[0.99, 0.99, 0.89]}>
-        <mesh
-          geometry={nodes.球体013.geometry}
-          material={materials['材质.012']}
-        />
-        <mesh
-          geometry={nodes.球体013_1.geometry}
-          material={nodes.球体013_1.material}
-        />
-        <mesh
-          geometry={nodes.球体013_2.geometry}
-          material={materials['材质.010']}
-        />
-        <mesh
-          geometry={nodes.球体013_3.geometry}
-          material={materials['材质.014']}
-        />
-        <mesh
-          geometry={nodes.球体013_4.geometry}
-          material={materials['材质.013']}
-        />
-        <mesh
-          geometry={nodes.球体013_5.geometry}
-          material={materials['材质.011']}
-        />
-        <mesh
-          geometry={nodes.球体013_6.geometry}
-          material={materials['材质.009']}
-        />
-        <mesh
-          geometry={nodes.球体013_7.geometry}
-          material={materials['材质.008']}
-        />
-      </group>
     </group>
   );
 }
 
-useGLTF.preload('/untitled.gltf');
+useGLTF.preload('/muyu.glb');
