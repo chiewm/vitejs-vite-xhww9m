@@ -4,27 +4,22 @@ import { Environment, OrbitControls, Stage } from '@react-three/drei';
 import { Model } from './Model';
 
 function App() {
-  const ref = useRef();
+  const ref = useRef<any>();
   return (
     <div className="App" id="canvas">
-      <Canvas
-        style={{
-          height: '100vh',
-          width: '100vh',
-          background: 'rgb(182 241 181)',
-        }}
-        dpr={[1, 2]}
-        camera={{ fov: 50 }}
-      >
-        <Suspense fallback={null}>
-          <Stage controls={ref} intensity={0.8} environment="city">
-            false
-            <Model />
-            false
-          </Stage>
-        </Suspense>
-        <OrbitControls ref={ref} autoRotate />
-      </Canvas>
+      <div className="flex justify-center">
+        <div className="text-sm">因果循環</div>
+        <Canvas dpr={[1, 2]} camera={{ fov: 50 }}>
+          <Suspense fallback={null}>
+            <Stage controls={ref} intensity={0.8}>
+              false
+              <Model />
+              false
+            </Stage>
+          </Suspense>
+          <OrbitControls ref={ref} />
+        </Canvas>
+      </div>
     </div>
   );
 }
